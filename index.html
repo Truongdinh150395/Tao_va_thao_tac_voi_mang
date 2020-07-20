@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành thao tác với mảng</title>
+</head>
+<body>
+    <form>
+        <p>Sample Screen</p>
+        <input type="text" id="input"><input type="button" value="Add" onclick="Add()">
+        <input value="Display" type="button" onclick="disPlay()">
+        <ul id="show"></ul>
+    </form>
+    <script>
+        let array = [];
+        function Add() {
+
+            let x = document.getElementById("input").value;  //tạo 1 biến để lưu giá trị nhập vào từ ô input
+            array.push(x);// thêm x vào cuối mảng arr
+            document.getElementById("input").value = '';   //khi nhập giá trị vào input thi ô input lại trắng
+            //hiển thị mảng array thời điểm hiện tại khi lưu giá trị
+            console.log(array)
+          //  document.getElementById("show").innerHTML =
+
+        }
+        function disPlay() {
+            let html = ''
+            for (let i = 0; i < array.length; i++) {
+                html += '<li>' + array[i] + '</li>'
+            }
+            document.getElementById("show").innerHTML = html;
+        }
+    </script>
+
+</body>
+</html>
